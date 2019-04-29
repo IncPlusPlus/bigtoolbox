@@ -3,7 +3,7 @@
  */
 
 dependencies {
-    compile 'ch.obermuhlner:big-math:2.0.1'
+    compile 'ch.obermuhlner:big-math:2.1.0'
 }
 
 task javadocJar(type: Jar) {
