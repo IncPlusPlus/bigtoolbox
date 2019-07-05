@@ -48,9 +48,6 @@ matrix:
     before_script:
       - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
     script:
-      # your build scripts before running `fossa`
-      # NOTE: before running `fossa` make sure to save your FOSSA_API_KEY in your
-      # environment variable in Travis see below.
+      - mvn clean install
       - fossa init
       - fossa analyze
-      - mvn clean install
