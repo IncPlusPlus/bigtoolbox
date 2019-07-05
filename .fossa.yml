@@ -14,24 +14,24 @@ analyze:
     path: .
   - name: 'Big Tool Box: IO'
     type: mvn
-    target: io\pom.xml
-    path: .
+    target: pom.xml
+    path: io
   - name: 'Big Tool Box: Math'
     type: mvn
-    target: math\pom.xml
-    path: .
+    target: pom.xml
+    path: math
   - name: 'Big Tool Box: Network'
     type: mvn
-    target: network\pom.xml
-    path: .
+    target: pom.xml
+    path: network
   - name: 'Big Tool Box: OS'
     type: mvn
-    target: os\pom.xml
-    path: .
+    target: pom.xml
+    path: os
   - name: Big Tool Box Assembler
     type: mvn
-    target: assembly\pom.xml
-    path: .
+    target: pom.xml
+    path: assembly
   - name: JavaInterop
     type: nuget
     target: network\src\main\dotnet\WinWiFi\JavaInterop\JavaInterop.csproj
