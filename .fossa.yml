@@ -34,9 +34,9 @@ analyze:
     path: assembly
   - name: JavaInterop
     type: nuget
-    target: network\src\main\dotnet\WinWiFi\JavaInterop\JavaInterop.csproj
+    target: JavaInterop.csproj
     path: network\src\main\dotnet\WinWiFi\JavaInterop
   - name: SimpleWifi
     type: nuget
-    target: network\src\main\dotnet\WinWiFi\SimpleWifi\SimpleWifi.csproj
+    target: SimpleWifi.csproj
     path: network\src\main\dotnet\WinWiFi\SimpleWifi
