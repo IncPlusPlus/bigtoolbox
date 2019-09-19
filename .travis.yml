@@ -22,8 +22,8 @@ matrix:
     install: true
     script:
     - mvn clean jacoco:prepare-agent install jacoco:report
-      after_success:
-        - bash <(curl -s https://codecov.io/bash)
+    after_success:
+      - bash <(curl -s https://codecov.io/bash)
     deploy:
     - provider: bintray
       file: bintray_info_maven.JSON
