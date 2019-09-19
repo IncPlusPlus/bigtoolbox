@@ -57,73 +57,73 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.0</version>
-                <!-- workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
-                <configuration>
-<!--                    <source>8</source>-->
-                    <finalName>${project.parent.artifactId}-${project.version}</finalName>
-                    <includeDependencySources>true</includeDependencySources>
-                    <jarOutputDirectory>${project.basedir}/../target</jarOutputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>aggregate-javadocs</id>
-                        <goals>
-                            <goal>aggregate-jar</goal>
-                        </goals>
-                        <configuration>
-                            <includeDependencySources>true</includeDependencySources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>resource-bundles</id>
-                        <phase>package</phase>
-                        <goals>
-                            <!-- produce source artifact for main project sources -->
-                            <goal>resource-bundle</goal>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <version>3.1.0</version>-->
+<!--                &lt;!&ndash; workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 &ndash;&gt;-->
+<!--                <configuration>-->
+<!--&lt;!&ndash;                    <source>8</source>&ndash;&gt;-->
+<!--                    <finalName>${project.parent.artifactId}-${project.version}</finalName>-->
+<!--                    <includeDependencySources>true</includeDependencySources>-->
+<!--                    <jarOutputDirectory>${project.basedir}/../target</jarOutputDirectory>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>aggregate-javadocs</id>-->
+<!--                        <goals>-->
+<!--                            <goal>aggregate-jar</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <includeDependencySources>true</includeDependencySources>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>attach-javadocs</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>jar</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>resource-bundles</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            &lt;!&ndash; produce source artifact for main project sources &ndash;&gt;-->
+<!--                            <goal>resource-bundle</goal>-->
 
-                            <!-- produce source artifact for project test sources -->
-                            <goal>test-resource-bundle</goal>
-                        </goals>
-                        <configuration>
-                            <detectOfflineLinks>false</detectOfflineLinks>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--                            &lt;!&ndash; produce source artifact for project test sources &ndash;&gt;-->
+<!--                            <goal>test-resource-bundle</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <detectOfflineLinks>false</detectOfflineLinks>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
         <dependencies>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>io</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>math</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>network</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>os</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>io</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>math</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>network</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>os</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
 </project>
