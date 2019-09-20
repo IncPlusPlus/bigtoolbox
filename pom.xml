@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.incplusplus</groupId>
     <artifactId>bigtoolbox</artifactId>
-    <version>1.0.50</version>
+    <version>1.0.51</version>
     <packaging>pom</packaging>
     <name>Big Tool Box</name>
     <description>A collection of tools for varying purposes.</description>
@@ -23,8 +23,10 @@
 
     <licenses>
         <license>
-            <name>GNU General Public License Version 3 (GPLv3)</name>
-            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
 
@@ -51,6 +53,51 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <!-- workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
+                <configuration>
+                    <!--                    <source>8</source>-->
+                    <finalName>${project.artifactId}-${project.version}</finalName>
+<!--                    <includeDependencySources>true</includeDependencySources>-->
+                    <jarOutputDirectory>${project.basedir}/target</jarOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>aggregate-javadocs</id>
+                        <goals>
+                            <goal>aggregate-jar</goal>
+                        </goals>
+<!--                        <configuration>-->
+<!--                            <includeDependencySources>true</includeDependencySources>-->
+<!--                        </configuration>-->
+                    </execution>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+<!--                    This execution may no longer be necessary -->
+                    <execution>
+                        <id>resource-bundles</id>
+                        <phase>package</phase>
+                        <goals>
+                            <!-- produce source artifact for main project sources -->
+                            <goal>resource-bundle</goal>
+
+                            <!-- produce source artifact for project test sources -->
+                            <goal>test-resource-bundle</goal>
+                        </goals>
+                        <configuration>
+                            <detectOfflineLinks>false</detectOfflineLinks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
