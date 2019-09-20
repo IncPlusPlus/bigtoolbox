@@ -6,7 +6,7 @@
     "desc": "Created automatically via push",
     "issue_tracker_url": "https://github.com/IncPlusPlus/bigtoolbox/issues",
     "vcs_url": "https://github.com/IncPlusPlus/bigtoolbox.git",
-    "licenses": ["GPL-3.0-or-later"],
+    "licenses": ["Apache-2.0"],
     "public_download_numbers": false,
     "public_stats": false
   },
