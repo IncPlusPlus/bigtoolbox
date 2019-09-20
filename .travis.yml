@@ -2,7 +2,7 @@ dist: xenial
 language: java
 cache:
   directories:
-    - $HOME/.m2
+    - $HOME/.m2/repository
 env:
 - CLI_VERSION=latest
 addons:
@@ -25,6 +25,12 @@ matrix:
     after_success:
       - bash <(curl -s https://codecov.io/bash)
     deploy:
+    - provider: script
+      script: "mvn deploy -Dregistry=https://maven.pkg.github.com/IncPlusPlus -Dtoken=$GH_TOKEN"
+      skip_cleanup: true
+      on:
+        repo: IncPlusPlus/bigtoolbox
+        branch: master
     - provider: bintray
       file: bintray_info_maven.JSON
       user: incplusplus

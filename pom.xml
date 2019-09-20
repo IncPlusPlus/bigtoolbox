@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.incplusplus</groupId>
     <artifactId>bigtoolbox</artifactId>
-    <version>1.0.52</version>
+    <version>1.0.53</version>
     <packaging>pom</packaging>
     <name>Big Tool Box</name>
     <description>A collection of tools for varying purposes.</description>
@@ -221,8 +221,9 @@
 
     <distributionManagement>
         <repository>
-            <id>main-maven</id>
-            <url>https://api.bintray.com/maven/${bintray.subject}/${bintray.repo}/${bintray.package}/;publish=1</url>
+            <id>github</id>
+            <name>GitHub IncPlusPlus Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/IncPlusPlus/bigtoolbox</url>
         </repository>
     </distributionManagement>
 
