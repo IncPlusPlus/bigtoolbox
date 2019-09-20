@@ -41,7 +41,7 @@ matrix:
       file: target/bigtoolbox-*.*.*.jar
       skip_cleanup: true
       on:
-        tags: false
+        tags: true
         repo: IncPlusPlus/bigtoolbox
         branch: master
   - jdk: openjdk11
