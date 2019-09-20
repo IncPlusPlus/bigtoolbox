@@ -5,13 +5,31 @@
     <parent>
         <groupId>io.github.incplusplus</groupId>
         <artifactId>bigtoolbox</artifactId>
-        <version>1.0.51</version>
+        <version>1.0.52</version>
     </parent>
     <artifactId>network</artifactId>
     <name>Big Tool Box: Network</name>
     <packaging>jar</packaging>
-    <version>1.0.51</version>
+    <version>1.0.52</version>
 
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>
+                    false
+                </enabled>
+            </snapshots>
+            <id>
+                bintray-incplusplus-main-maven
+            </id>
+            <name>
+                bintray
+            </name>
+            <url>
+                https://dl.bintray.com/incplusplus/main-maven
+            </url>
+        </repository>
+    </repositories>
 
     <build>
         <resources>
@@ -114,7 +132,7 @@
         <dependency>
             <groupId>io.github.incplusplus</groupId>
             <artifactId>bigtoolbox</artifactId>
-            <version>1.0.50</version>
+            <version>1.0.51</version>
         </dependency>
     </dependencies>
     <properties>
