@@ -83,21 +83,6 @@
                             <goal>jar</goal>
                         </goals>
                     </execution>
-<!--                    This execution may no longer be necessary -->
-                    <execution>
-                        <id>resource-bundles</id>
-                        <phase>package</phase>
-                        <goals>
-                            <!-- produce source artifact for main project sources -->
-                            <goal>resource-bundle</goal>
-
-                            <!-- produce source artifact for project test sources -->
-                            <goal>test-resource-bundle</goal>
-                        </goals>
-                        <configuration>
-                            <detectOfflineLinks>false</detectOfflineLinks>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
             <plugin>
