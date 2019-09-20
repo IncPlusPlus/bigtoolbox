@@ -5,9 +5,9 @@
     <parent>
         <groupId>io.github.incplusplus</groupId>
         <artifactId>bigtoolbox</artifactId>
-        <version>1.0.54</version>
+        <version>1.0.55</version>
     </parent>
-    <version>1.0.54</version>
+    <version>1.0.55</version>
     <artifactId>assembly</artifactId>
     <packaging>pom</packaging>
     <name>Big Tool Box Assembler</name>
