@@ -31,7 +31,6 @@ matrix:
       key: "$bintray_key"
       skip_cleanup: true
       on:
-        tags: true
         repo: IncPlusPlus/bigtoolbox
         branch: master
     - provider: releases
@@ -41,7 +40,6 @@ matrix:
       file: target/bigtoolbox-*.*.*.jar
       skip_cleanup: true
       on:
-        tags: true
         repo: IncPlusPlus/bigtoolbox
         branch: master
   - jdk: openjdk11
