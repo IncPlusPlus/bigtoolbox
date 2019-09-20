@@ -60,6 +60,8 @@
                 <!-- workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
                 <configuration>
                     <!--                    <source>8</source>-->
+                    <!-- The below specified attribute 'attach' will disable the javadoc.jar not included in the artifact list -->
+                    <attach>false</attach>
                     <finalName>${project.artifactId}-${project.version}</finalName>
 <!--                    <includeDependencySources>true</includeDependencySources>-->
                     <jarOutputDirectory>${project.basedir}/target</jarOutputDirectory>
@@ -155,6 +157,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.0.1</version>
+                <configuration>
+                    <!-- The below specified attribute 'attach' will disable the sources.jar not included in the artifact list -->
+                    <attach>false</attach>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -202,8 +208,8 @@
                 <version>2.8.2</version>
                 <configuration>
                     <file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>
-                    <javadoc>${project.build.directory}/${project.artifactId}-${project.version}-javadoc.jar</javadoc>
-                    <sources>${project.build.directory}/${project.artifactId}-${project.version}-sources.jar</sources>
+<!--                    <javadoc>${project.build.directory}/${project.artifactId}-${project.version}-javadoc.jar</javadoc>-->
+<!--                    <sources>${project.build.directory}/${project.artifactId}-${project.version}-sources.jar</sources>-->
                 </configuration>
             </plugin>
             <plugin>
