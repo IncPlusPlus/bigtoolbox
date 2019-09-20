@@ -26,7 +26,7 @@ matrix:
       - bash <(curl -s https://codecov.io/bash)
     deploy:
     - provider: script
-      script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy"
+      script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy -Dregistry=https://maven.pkg.github.com/IncPlusPlus -Dtoken=$GH_REGISTRY_TOKEN"
       skip_cleanup: true
       on:
         repo: IncPlusPlus/bigtoolbox
