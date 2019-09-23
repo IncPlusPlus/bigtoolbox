@@ -12,6 +12,12 @@
     <packaging>pom</packaging>
     <name>Big Tool Box Assembler</name>
 
+    <scm>
+        <connection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</connection>
+        <developerConnection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</developerConnection>
+        <url>https://github.com/IncPlusPlus/bigtoolbox</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
