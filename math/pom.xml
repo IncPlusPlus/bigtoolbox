@@ -6,11 +6,11 @@
     <parent>
         <groupId>io.github.incplusplus</groupId>
         <artifactId>bigtoolbox</artifactId>
-        <version>1.0.62</version>
+        <version>1.0.95</version>
     </parent>
     <artifactId>math</artifactId>
     <name>Big Tool Box: Math</name>
-    <version>1.0.62</version>
+    <version>1.0.95</version>
     <packaging>jar</packaging>
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
@@ -19,7 +19,7 @@
     </properties>
 
     <build>
-        <finalName>math</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
