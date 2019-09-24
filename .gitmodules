@@ -1,0 +1,12 @@
+[submodule "io"]
+	path = io
+	url = git@github.com:IncPlusPlus/bigtoolbox-io.git
+[submodule "math"]
+	path = math
+	url = git@github.com:IncPlusPlus/bigtoolbox-math.git
+[submodule "network"]
+	path = network
+	url = git@github.com:IncPlusPlus/bigtoolbox-network.git
+[submodule "os"]
+	path = os
+	url = git@github.com:IncPlusPlus/bigtoolbox-os.git
