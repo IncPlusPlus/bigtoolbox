@@ -15,7 +15,6 @@ jobs:
         echo ${{github.event.action}}
         echo ${{github.event.repository.ref}}
         echo ${{github.event.ref}}
-        echo ${{github.event.repository}}
         echo ${{github.event.repository.full_name}}
         echo ${{github.event.repository.url}}
         echo done!!!
