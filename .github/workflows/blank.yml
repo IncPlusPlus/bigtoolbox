@@ -11,4 +11,6 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         echo ${{github.event}}
+        echo ${{github.event_type}}
+        echo ${{github.event.action}}
         echo done!!!
