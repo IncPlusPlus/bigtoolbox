@@ -13,8 +13,11 @@ jobs:
         echo ${{github.event}}
         echo ${{github.event_name}}
         echo ${{github.event.action}}
-        echo ${{github.event.repository.ref}}
-        echo ${{github.event.ref}}
+        echo ${{github.event.repository.branch}}
         echo ${{github.event.repository.full_name}}
         echo ${{github.event.repository.url}}
+        echo ${{github.event.sender.login}}
+        echo ${{github.event.sender.url}}
+        echo ${{github.event.sender.html_url}}
+        echo ${{github.event.sender.type}}
         echo done!!!
