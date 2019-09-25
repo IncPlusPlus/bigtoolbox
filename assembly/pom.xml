@@ -9,7 +9,7 @@
     </parent>
     <version>1.0.95</version>
     <artifactId>assembly</artifactId>
-<!--    <packaging>pom</packaging>-->
+    <packaging>pom</packaging>
     <name>Big Tool Box Assembler</name>
 <!--    <properties>-->
 <!--        <maven.deploy.skip>true</maven.deploy.skip>-->
@@ -45,8 +45,9 @@
 <!--                </executions>-->
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>go-framework-assemby</id>
@@ -173,26 +174,30 @@
         </plugins>
     </build>
 
-        <dependencies>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>io</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>math</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>network</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>os</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>io</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../io/</systemPath>&ndash;&gt;-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>math</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../math</systemPath>&ndash;&gt;-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>network</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../network</systemPath>&ndash;&gt;-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>${project.groupId}</groupId>-->
+<!--                <artifactId>os</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../os</systemPath>&ndash;&gt;-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
 </project>
