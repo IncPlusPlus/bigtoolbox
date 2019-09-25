@@ -32,12 +32,6 @@ matrix:
     after_success:
       - bash <(curl -s https://codecov.io/bash)
     deploy:
-    - provider: script
-      script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy -X"
-      skip_cleanup: true
-      on:
-        repo: IncPlusPlus/bigtoolbox
-        branch: master
     - provider: bintray
       file: bintray_info_maven.JSON
       user: incplusplus
