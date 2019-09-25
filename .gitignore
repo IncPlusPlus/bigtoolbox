@@ -27,3 +27,9 @@ network/src/main/resources/JavaInterop.exe
 network/src/main/resources/JavaInterop.exe.config
 network/src/main/resources/SimpleWifi.dll
 network/src/main/resources/Newtonsoft.Json.xml
+
+# Ignore submodules. From Git's perspective at the base directory, these are all untracked files
+io
+math
+network
+os
