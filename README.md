@@ -11,6 +11,18 @@
 This is a simple library of Java utilities that I made either because I wanted simple ways to do things for projects in college or for my own personal use.
 ## Why?
 I felt like sharing these in case somebody manages to find this repository and is looking for tools that can pull off exactly what they need.
+
+## Modules
+This project currently has 4 modules
+
+| Module         	| Repository                                                                          	| Build Status                                                                                                                                    	| Develop Branch Status                                                                                                                            	|
+|----------------	|-------------------------------------------------------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------	|
+| IO             	| [IncPlusPlus/bigtoolbox-io](https://github.com/IncPlusPlus/bigtoolbox-io)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-io.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-io)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-io.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-io)           	|
+| Math           	| [IncPlusPlus/bigtoolbox-math](https://github.com/IncPlusPlus/bigtoolbox-math)       	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-math.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-math)       	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-math.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-math)       	|
+| Network        	| [IncPlusPlus/bigtoolbox-network](https://github.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	|
+| OS             	| [IncPlusPlus/bigtoolbox-os](https://github.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	|
+| Parent Project 	| [IncPlusPlus/bigtoolbox-parent](https://github.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	|
+
 ## Acknowledgements
 `File1` and `File1Iter` of the IO module use code from [gt4dev](https://github.com/gt4dev)'s [yet-another-tree-structure repository](https://github.com/gt4dev/yet-another-tree-structure) and modifications from [SO](https://stackoverflow.com/a/54338414/1687436). ([See folder](io/src/main/java/io/github/incplusplus/bigtoolbox/io/filesys))
 
