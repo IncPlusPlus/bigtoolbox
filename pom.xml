@@ -219,9 +219,8 @@
 
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub IncPlusPlus Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/IncPlusPlus/bigtoolbox</url>
+            <id>main-maven</id>
+            <url>https://api.bintray.com/maven/${bintray.subject}/${bintray.repo}/${bintray.package}/;publish=1</url>
         </repository>
     </distributionManagement>
 
