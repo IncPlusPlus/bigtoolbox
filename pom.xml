@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.incplusplus</groupId>
     <artifactId>bigtoolbox</artifactId>
-    <version>1.0.96</version>
+    <version>1.0.97</version>
 <!--    <packaging>pom</packaging>-->
     <name>Big Tool Box</name>
     <description>A collection of tools for varying purposes.
@@ -21,10 +21,10 @@
         <bintray.subject>incplusplus</bintray.subject>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
-        <bigtoolbox.io.version>1.0.96</bigtoolbox.io.version>
-        <bigtoolbox.math.version>1.0.96</bigtoolbox.math.version>
-        <bigtoolbox.network.version>1.0.96</bigtoolbox.network.version>
-        <bigtoolbox.os.version>1.0.96</bigtoolbox.os.version>
+        <bigtoolbox.io.version>1.0.97</bigtoolbox.io.version>
+        <bigtoolbox.math.version>1.0.97</bigtoolbox.math.version>
+        <bigtoolbox.network.version>1.0.97</bigtoolbox.network.version>
+        <bigtoolbox.os.version>1.0.97</bigtoolbox.os.version>
     </properties>
 
     <licenses>
