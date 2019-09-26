@@ -7,7 +7,8 @@
     <version>1.0.95</version>
     <packaging>pom</packaging>
     <name>Big Tool Box</name>
-    <description>A collection of tools for varying purposes.</description>
+    <description>A collection of tools for varying purposes.
+    This is the aggregator POM that includes all of the modules of bigtoolbox</description>
     <url>https://github.com/IncPlusPlus/bigtoolbox</url>
 
     <properties>
@@ -49,7 +50,6 @@
         <module>math</module>
         <module>os</module>
         <module>network</module>
-        <module>assembly</module>
     </modules>
 
     <build>
