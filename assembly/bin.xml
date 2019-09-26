@@ -11,15 +11,15 @@
     <moduleSets>
         <moduleSet>
             <!-- Enable access to all projects in the current multimodule build! -->
-            <useAllReactorProjects>true</useAllReactorProjects>
+<!--            <useAllReactorProjects>true</useAllReactorProjects>-->
 
             <!-- Now, select which projects to include in this module-set. -->
-<!--                        <includes>-->
-<!--                            <include>io.github.incplusplus:io</include>-->
-<!--                            <include>io.github.incplusplus:math</include>-->
-<!--                            <include>io.github.incplusplus:network</include>-->
-<!--                            <include>io.github.incplusplus:os</include>-->
-<!--                        </includes>-->
+                        <includes>
+                            <include>io.github.incplusplus:io</include>
+                            <include>io.github.incplusplus:math</include>
+                            <include>io.github.incplusplus:network</include>
+                            <include>io.github.incplusplus:os</include>
+                        </includes>
 <!--            <excludes><exclude>io.github.incplusplus:assembly</exclude></excludes>-->
             <binaries>
                 <includeDependencies>true</includeDependencies>
