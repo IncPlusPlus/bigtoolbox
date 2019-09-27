@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/422944b680614877b2f8c5cdecdc0dfa)](https://www.codacy.com/app/IncPlusPlus/MyCustomUtils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IncPlusPlus/MyCustomUtils&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2bcc9af63280469889fe004ae8a7e122)](https://www.codacy.com/manual/IncPlusPlus/bigtoolbox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IncPlusPlus/bigtoolbox&amp;utm_campaign=Badge_Grade)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/IncPlusPlus/bigtoolbox.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IncPlusPlus/bigtoolbox/context:java)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fa9c00f3d5f3da195463/maintainability)](https://codeclimate.com/github/IncPlusPlus/bigtoolbox/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fa9c00f3d5f3da195463/test_coverage)](https://codeclimate.com/github/IncPlusPlus/bigtoolbox/test_coverage)
