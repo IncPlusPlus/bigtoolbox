@@ -6,6 +6,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/IncPlusPlus/bigtoolbox/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/IncPlusPlus/bigtoolbox?targetFile=pom.xml)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IncPlusPlus/bigtoolbox.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IncPlusPlus/bigtoolbox/alerts/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox?ref=badge_shield)
+
 # What is this?
 This is a simple library of Java utilities that I made either because I wanted simple ways to do things for projects in college or for my own personal use.
 ## Why?
