@@ -23,8 +23,5 @@ This project currently has 4 modules
 | OS             	| [IncPlusPlus/bigtoolbox-os](https://github.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	|
 | Parent Project 	| [IncPlusPlus/bigtoolbox-parent](https://github.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	|
 
-## Acknowledgements
-`File1` and `File1Iter` of the IO module use code from [gt4dev](https://github.com/gt4dev)'s [yet-another-tree-structure repository](https://github.com/gt4dev/yet-another-tree-structure) and modifications from [SO](https://stackoverflow.com/a/54338414/1687436). ([See folder](io/src/main/java/io/github/incplusplus/bigtoolbox/io/filesys))
-
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox?ref=badge_large)
