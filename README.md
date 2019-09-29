@@ -13,7 +13,7 @@ This is a simple library of Java utilities that I made either because I wanted s
 I felt like sharing these in case somebody manages to find this repository and is looking for tools that can pull off exactly what they need.
 
 ## Modules
-This project currently has 4 modules
+This project currently has 4 modules.
 
 | Module         	| Repository                                                                          	| Build Status                                                                                                                                    	| Develop Branch Status                                                                                                                            	|
 |----------------	|-------------------------------------------------------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -22,6 +22,7 @@ This project currently has 4 modules
 | Network        	| [IncPlusPlus/bigtoolbox-network](https://github.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	|
 | OS             	| [IncPlusPlus/bigtoolbox-os](https://github.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	|
 | Parent Project 	| [IncPlusPlus/bigtoolbox-parent](https://github.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	|
+Credit to [Tables Generator](https://www.tablesgenerator.com/markdown_tables) for the awesome utility used to generate this table.
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIncPlusPlus%2Fbigtoolbox?ref=badge_large)
