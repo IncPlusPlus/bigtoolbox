@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.incplusplus</groupId>
   <artifactId>bigtoolbox</artifactId>
-  <version>1.0.98</version>
+  <version>1.0.99</version>
   <name>Big Tool Box</name>
   <description>A collection of tools for varying purposes.
     This is the aggregator POM that includes all of the modules of bigtoolbox</description>
