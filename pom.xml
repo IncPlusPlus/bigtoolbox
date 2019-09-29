@@ -18,10 +18,10 @@
     <bintray.subject>incplusplus</bintray.subject>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
-    <bigtoolbox.io.version>1.0.97</bigtoolbox.io.version>
-    <bigtoolbox.math.version>1.0.97</bigtoolbox.math.version>
-    <bigtoolbox.network.version>1.0.97</bigtoolbox.network.version>
-    <bigtoolbox.os.version>1.0.97</bigtoolbox.os.version>
+    <bigtoolbox.io.version>1.0.98</bigtoolbox.io.version>
+    <bigtoolbox.math.version>1.0.98</bigtoolbox.math.version>
+    <bigtoolbox.network.version>1.0.98</bigtoolbox.network.version>
+    <bigtoolbox.os.version>1.0.98</bigtoolbox.os.version>
   </properties>
   <dependencies>
     <dependency>
@@ -87,65 +87,6 @@
           </execution>
         </executions>
       </plugin>
-      <!--            <plugin>-->
-      <!--                <groupId>org.apache.maven.plugins</groupId>-->
-      <!--                <artifactId>maven-surefire-plugin</artifactId>-->
-      <!--                <version>2.22.0</version>-->
-      <!--            </plugin>-->
-      <!--            <plugin>-->
-      <!--                <groupId>org.apache.maven.plugins</groupId>-->
-      <!--                <artifactId>maven-failsafe-plugin</artifactId>-->
-      <!--                <version>2.22.0</version>-->
-      <!--            </plugin>-->
-      <!--            <plugin>-->
-      <!--                <groupId>org.apache.maven.plugins</groupId>-->
-      <!--                <artifactId>maven-install-plugin</artifactId>-->
-      <!--                <version>3.0.0-M1</version>-->
-      <!--                <executions>-->
-      <!--                    <execution>-->
-      <!--                        <id>generate-pom</id>-->
-      <!--                        <goals>-->
-      <!--                            <goal>install-file</goal>-->
-      <!--                        </goals>-->
-      <!--                        <phase>install</phase>-->
-      <!--                        <configuration>-->
-      <!--&lt;!&ndash;                            <generatePom>true</generatePom>&ndash;&gt;-->
-      <!--                            <packaging>jar</packaging>-->
-      <!--                            <artifactId>${project.artifactId}</artifactId>-->
-      <!--                            <groupId>${project.groupId}</groupId>-->
-      <!--                            <version>${project.version}</version>-->
-      <!--                            <file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>-->
-      <!--&lt;!&ndash;                            <javadoc>${project.build.directory}/${project.artifactId}-${project.version}-javadoc.jar</javadoc>&ndash;&gt;-->
-      <!--&lt;!&ndash;                            <sources>${project.build.directory}/${project.artifactId}-${project.version}-sources.jar</sources>&ndash;&gt;-->
-      <!--                        </configuration>-->
-      <!--                    </execution>-->
-      <!--                </executions>-->
-      <!--            </plugin>-->
-      <!--            <plugin>-->
-      <!--                <artifactId>maven-resources-plugin</artifactId>-->
-      <!--                <version>2.7</version>-->
-      <!--                <executions>-->
-      <!--                    <execution>-->
-      <!--                        <id>copy-resource-one</id>-->
-      <!--                        <phase>install</phase>-->
-      <!--                        <goals>-->
-      <!--                            <goal>copy-resources</goal>-->
-      <!--                        </goals>-->
-
-      <!--                        <configuration>-->
-      <!--                            <outputDirectory>${basedir}/target</outputDirectory>-->
-      <!--                            <resources>-->
-      <!--                                <resource>-->
-      <!--                                    <directory>${settings.localRepository}/io/github/incplusplus/bigtoolbox/${project.version}</directory>-->
-      <!--                                    <includes>-->
-      <!--                                        <include>*.pom</include>-->
-      <!--                                    </includes>-->
-      <!--                                </resource>-->
-      <!--                            </resources>-->
-      <!--                        </configuration>-->
-      <!--                    </execution>-->
-      <!--                </executions>-->
-      <!--            </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
