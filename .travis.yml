@@ -43,7 +43,6 @@ matrix:
       on:
         repo: IncPlusPlus/bigtoolbox
         branch: master
-        condition: tag IS present
   - jdk: openjdk11
     # See https://github.com/travis-ci/travis-ci/issues/8667
     install: true
