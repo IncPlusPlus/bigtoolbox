@@ -5,12 +5,22 @@
     <parent>
         <groupId>io.github.incplusplus</groupId>
         <artifactId>bigtoolbox</artifactId>
-        <version>1.0.51</version>
+        <version>1.0.95</version>
     </parent>
-    <version>1.0.51</version>
+    <version>1.0.95</version>
     <artifactId>assembly</artifactId>
     <packaging>pom</packaging>
     <name>Big Tool Box Assembler</name>
+<!--    <properties>-->
+<!--        <maven.deploy.skip>true</maven.deploy.skip>-->
+<!--    </properties>-->
+
+
+    <scm>
+        <connection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</connection>
+        <developerConnection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</developerConnection>
+        <url>https://github.com/IncPlusPlus/bigtoolbox</url>
+    </scm>
 
     <build>
         <plugins>
@@ -18,25 +28,26 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <phase>package</phase>
-                        <id>generate-sources</id>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>attach-sources</id>-->
+<!--                        <goals>-->
+<!--                            <goal>jar</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <id>generate-sources</id>-->
+<!--                        <goals>-->
+<!--                            <goal>aggregate</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>go-framework-assemby</id>
@@ -55,6 +66,65 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--                <version>3.1.2</version>-->
+<!--                <configuration>-->
+<!--&lt;!&ndash;                <skipIfEmpty>true</skipIfEmpty>&ndash;&gt;-->
+<!--                <archive>-->
+<!--                    <addMavenDescriptor>false</addMavenDescriptor>-->
+<!--                </archive>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <executions>
+                    <execution>
+                        <id>attach-main-jar</id>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <phase>install</phase>
+                        <configuration>
+<!--                            <generatePom>true</generatePom>-->
+                            <packaging>jar</packaging>
+                            <artifactId>${project.parent.artifactId}</artifactId>
+                            <groupId>${project.parent.groupId}</groupId>
+                            <version>${project.parent.version}</version>
+                            <file>${project.parent.build.directory}/${project.parent.artifactId}-${project.parent.version}.jar</file>
+<!--                            <javadoc>${project.parent.build.directory}/${project.parent.artifactId}-${project.parent.version}-javadoc.jar</javadoc>-->
+                            <sources>${project.parent.build.directory}/${project.parent.artifactId}-${project.parent.version}-sources.jar</sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <version>3.2.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <outputDirectory>${project.parent.build.directory}</outputDirectory>-->
+<!--                            <finalName>${project.parent.artifactId}-${project.parent.version}</finalName>-->
+<!--                            <shadedArtifactAttached>false</shadedArtifactAttached>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+<!--                <configuration><skip>true</skip></configuration>-->
             </plugin>
 
 <!--            <plugin>-->
@@ -104,26 +174,30 @@
         </plugins>
     </build>
 
-        <dependencies>
+<!--        <dependencies>-->
 <!--            <dependency>-->
 <!--                <groupId>${project.groupId}</groupId>-->
 <!--                <artifactId>io</artifactId>-->
 <!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../io/</systemPath>&ndash;&gt;-->
 <!--            </dependency>-->
 <!--            <dependency>-->
 <!--                <groupId>${project.groupId}</groupId>-->
 <!--                <artifactId>math</artifactId>-->
 <!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../math</systemPath>&ndash;&gt;-->
 <!--            </dependency>-->
 <!--            <dependency>-->
 <!--                <groupId>${project.groupId}</groupId>-->
 <!--                <artifactId>network</artifactId>-->
 <!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../network</systemPath>&ndash;&gt;-->
 <!--            </dependency>-->
 <!--            <dependency>-->
 <!--                <groupId>${project.groupId}</groupId>-->
 <!--                <artifactId>os</artifactId>-->
 <!--                <version>${project.version}</version>-->
+<!--&lt;!&ndash;                <systemPath>${project.basedir}/../os</systemPath>&ndash;&gt;-->
 <!--            </dependency>-->
-        </dependencies>
+<!--        </dependencies>-->
 </project>

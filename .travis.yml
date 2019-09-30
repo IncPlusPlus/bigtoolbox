@@ -2,9 +2,16 @@ dist: xenial
 language: java
 cache:
   directories:
-    - $HOME/.m2
+    - $HOME/.m2/repository
 env:
 - CLI_VERSION=latest
+# Handle git submodules yourself
+git:
+  submodules: false
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
 addons:
   apt:
     sources:
@@ -31,7 +38,6 @@ matrix:
       key: "$bintray_key"
       skip_cleanup: true
       on:
-        tags: true
         repo: IncPlusPlus/bigtoolbox
         branch: master
     - provider: releases
@@ -40,8 +46,8 @@ matrix:
       file_glob: true
       file: target/bigtoolbox-*.*.*.jar
       skip_cleanup: true
+      draft: true
       on:
-        tags: false
         repo: IncPlusPlus/bigtoolbox
         branch: master
   - jdk: openjdk11
