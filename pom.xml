@@ -1,269 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.incplusplus</groupId>
-    <artifactId>bigtoolbox</artifactId>
-    <version>1.0.95</version>
-    <packaging>pom</packaging>
-    <name>Big Tool Box</name>
-    <description>A collection of tools for varying purposes.</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.incplusplus</groupId>
+  <artifactId>bigtoolbox</artifactId>
+  <version>1.0.99</version>
+  <name>Big Tool Box</name>
+  <description>A collection of tools for varying purposes.
+    This is the aggregator POM that includes all of the modules of bigtoolbox</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>11</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <bintray.repo>incplusplus/main-maven</bintray.repo>
+    <bintray.package>bigtoolbox</bintray.package>
+    <bintray.subject>incplusplus</bintray.subject>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
+    <bigtoolbox.io.version>1.0.98</bigtoolbox.io.version>
+    <bigtoolbox.math.version>1.0.98</bigtoolbox.math.version>
+    <bigtoolbox.network.version>1.0.98</bigtoolbox.network.version>
+    <bigtoolbox.os.version>1.0.98</bigtoolbox.os.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.incplusplus</groupId>
+      <artifactId>bigtoolbox-io</artifactId>
+      <version>${bigtoolbox.io.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.incplusplus</groupId>
+      <artifactId>bigtoolbox-math</artifactId>
+      <version>${bigtoolbox.math.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.incplusplus</groupId>
+      <artifactId>bigtoolbox-network</artifactId>
+      <version>${bigtoolbox.network.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.incplusplus</groupId>
+      <artifactId>bigtoolbox-os</artifactId>
+      <version>${bigtoolbox.os.version}</version>
+    </dependency>
+  </dependencies>
+
+  <!--    <modules>-->
+  <!--        <module>io</module>-->
+  <!--        <module>math</module>-->
+  <!--        <module>os</module>-->
+  <!--        <module>network</module>-->
+  <!--    </modules>-->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.1</version>
+        <!-- workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
+        <configuration>
+          <!--                    <source>8</source>-->
+          <!-- The below specified attribute 'attach' will disable the javadoc.jar not included in the artifact list -->
+          <!--                    <attach>false</attach>-->
+          <finalName>${project.artifactId}-${project.version}</finalName>
+          <!--                    <includeDependencySources>true</includeDependencySources>-->
+          <jarOutputDirectory>${project.build.directory}</jarOutputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <id>aggregate-javadocs</id>
+            <goals>
+              <goal>aggregate-jar</goal>
+            </goals>
+            <configuration>
+              <includeDependencySources>true</includeDependencySources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <finalName>${project.artifactId}-${project.version}</finalName>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
+              <createSourcesJar>true</createSourcesJar>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>copy-resource-one</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>install</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${settings.localRepository}/io/github/incplusplus/${project.artifactId}/${project.version}</directory>
+                  <includes>
+                    <include>*.pom</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!--            <plugin>-->
+      <!--                <groupId>org.apache.maven.plugins</groupId>-->
+      <!--                <artifactId>maven-source-plugin</artifactId>-->
+      <!--                <version>3.0.1</version>-->
+      <!--                <configuration>-->
+      <!--                    &lt;!&ndash; The below specified attribute 'attach' will disable the sources.jar not included in the artifact list &ndash;&gt;-->
+      <!--                    <attach>false</attach>-->
+      <!--                </configuration>-->
+      <!--                <executions>-->
+      <!--                    <execution>-->
+      <!--                        <id>attach-sources</id>-->
+      <!--                        <goals>-->
+      <!--                            <goal>jar</goal>-->
+      <!--                        </goals>-->
+      <!--                    </execution>-->
+      <!--                    <execution>-->
+      <!--                        <phase>package</phase>-->
+      <!--                        <id>generate-sources</id>-->
+      <!--                        <goals>-->
+      <!--                            <goal>aggregate</goal>-->
+      <!--                        </goals>-->
+      <!--                    </execution>-->
+      <!--                </executions>-->
+      <!--            </plugin>-->
+      <!--            <plugin>-->
+      <!--                <groupId>org.apache.maven.plugins</groupId>-->
+      <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+      <!--                <version>3.8.0</version>-->
+      <!--            </plugin>-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>[3.6.0,)</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <url>https://github.com/IncPlusPlus/bigtoolbox</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Ryan Cloherty</name>
+      <email>cloherty.ryan@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</connection>
+    <developerConnection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</developerConnection>
     <url>https://github.com/IncPlusPlus/bigtoolbox</url>
+  </scm>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <bintray.repo>incplusplus/main-maven</bintray.repo>
-        <bintray.package>bigtoolbox</bintray.package>
-        <bintray.subject>incplusplus</bintray.subject>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
-    </properties>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray-incplusplus-main-maven</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/incplusplus/main-maven</url>
+    </repository>
+  </repositories>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Ryan Cloherty</name>
-            <email>cloherty.ryan@gmail.com</email>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</connection>
-        <developerConnection>scm:git:https://github.com/IncPlusPlus/bigtoolbox.git</developerConnection>
-        <url>https://github.com/IncPlusPlus/bigtoolbox</url>
-    </scm>
-
-    <modules>
-        <module>io</module>
-        <module>math</module>
-        <module>os</module>
-        <module>network</module>
-        <module>assembly</module>
-    </modules>
-
-    <build>
-        <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                <version>3.1.1</version>-->
-<!--                &lt;!&ndash; workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 &ndash;&gt;-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash;                    <source>8</source>&ndash;&gt;-->
-<!--                    &lt;!&ndash; The below specified attribute 'attach' will disable the javadoc.jar not included in the artifact list &ndash;&gt;-->
-<!--                    <attach>false</attach>-->
-<!--                    <finalName>${project.artifactId}-${project.version}</finalName>-->
-<!--&lt;!&ndash;                    <includeDependencySources>true</includeDependencySources>&ndash;&gt;-->
-<!--                    <jarOutputDirectory>${project.basedir}/target</jarOutputDirectory>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>aggregate-javadocs</id>-->
-<!--                        <goals>-->
-<!--                            <goal>aggregate-jar</goal>-->
-<!--                        </goals>-->
-<!--&lt;!&ndash;                        <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <includeDependencySources>true</includeDependencySources>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </configuration>&ndash;&gt;-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>attach-javadocs</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>jar</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.0</version>
-            </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-install-plugin</artifactId>-->
-<!--                <version>3.0.0-M1</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>generate-pom</id>-->
-<!--                        <goals>-->
-<!--                            <goal>install-file</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>install</phase>-->
-<!--                        <configuration>-->
-<!--&lt;!&ndash;                            <generatePom>true</generatePom>&ndash;&gt;-->
-<!--                            <packaging>jar</packaging>-->
-<!--                            <artifactId>${project.artifactId}</artifactId>-->
-<!--                            <groupId>${project.groupId}</groupId>-->
-<!--                            <version>${project.version}</version>-->
-<!--                            <file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>-->
-<!--&lt;!&ndash;                            <javadoc>${project.build.directory}/${project.artifactId}-${project.version}-javadoc.jar</javadoc>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <sources>${project.build.directory}/${project.artifactId}-${project.version}-sources.jar</sources>&ndash;&gt;-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <artifactId>maven-resources-plugin</artifactId>-->
-<!--                <version>2.7</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>copy-resource-one</id>-->
-<!--                        <phase>install</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>copy-resources</goal>-->
-<!--                        </goals>-->
-
-<!--                        <configuration>-->
-<!--                            <outputDirectory>${basedir}/target</outputDirectory>-->
-<!--                            <resources>-->
-<!--                                <resource>-->
-<!--                                    <directory>${settings.localRepository}/io/github/incplusplus/bigtoolbox/${project.version}</directory>-->
-<!--                                    <includes>-->
-<!--                                        <include>*.pom</include>-->
-<!--                                    </includes>-->
-<!--                                </resource>-->
-<!--                            </resources>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <!-- The below specified attribute 'attach' will disable the sources.jar not included in the artifact list -->
-                    <attach>false</attach>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <phase>package</phase>
-                        <id>generate-sources</id>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M2</version>
-                <executions>
-                    <execution>
-                        <id>enforce-maven</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireMavenVersion>
-                                    <version>[3.6.0,)</version>
-                                </requireMavenVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-                <configuration>
-<!--                    <skip>false</skip>-->
-                    <files>${project.build.directory}/${project.artifactId}-${project.version}.jar</files>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
-                <executions>
-                    <execution>
-                        <id>jacoco-initialize</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-site</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub IncPlusPlus Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/IncPlusPlus/bigtoolbox</url>
-        </repository>
-    </distributionManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>1.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apiguardian</groupId>
-            <artifactId>apiguardian-api</artifactId>
-            <version>1.0.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.opentest4j</groupId>
-            <artifactId>opentest4j</artifactId>
-            <version>1.1.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>main-maven</id>
+      <url>https://api.bintray.com/maven/${bintray.subject}/${bintray.repo}/${bintray.package}/;publish=1</url>
+    </repository>
+  </distributionManagement>
 </project>
