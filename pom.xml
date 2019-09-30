@@ -45,14 +45,7 @@
       <version>${bigtoolbox.os.version}</version>
     </dependency>
   </dependencies>
-
-  <!--    <modules>-->
-  <!--        <module>io</module>-->
-  <!--        <module>math</module>-->
-  <!--        <module>os</module>-->
-  <!--        <module>network</module>-->
-  <!--    </modules>-->
-
+  
   <build>
     <plugins>
       <plugin>
