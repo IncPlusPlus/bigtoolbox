@@ -1,1 +1,2 @@
-clean-all-btb-folders.* linguist-detectable=false
+clean-all-btb-folders.bat linguist-detectable=false
+clean-all-btb-folders.ps1 linguist-detectable=false
