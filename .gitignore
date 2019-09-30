@@ -21,5 +21,3 @@ gradle-app.setting
 **/build/
 !**/packages/**/build/
 **/bin/
-
-/dependency-reduced-pom.xml

@@ -102,6 +102,7 @@
               <finalName>${project.artifactId}-${project.version}</finalName>
               <shadedArtifactAttached>false</shadedArtifactAttached>
               <createSourcesJar>true</createSourcesJar>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
             </configuration>
           </execution>
         </executions>
