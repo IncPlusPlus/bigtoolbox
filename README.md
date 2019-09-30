@@ -22,6 +22,7 @@ This project currently has 4 modules.
 | Network        	| [IncPlusPlus/bigtoolbox-network](https://github.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-network.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-network) 	|
 | OS             	| [IncPlusPlus/bigtoolbox-os](https://github.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-os.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-os)           	|
 | Parent Project 	| [IncPlusPlus/bigtoolbox-parent](https://github.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=master)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	| [![Build Status](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent.svg?branch=develop)](https://travis-ci.com/IncPlusPlus/bigtoolbox-parent)   	|
+
 Credit to [Tables Generator](https://www.tablesgenerator.com/markdown_tables) for the awesome utility used to generate this table.
 
 ## License
