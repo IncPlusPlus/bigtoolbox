@@ -76,6 +76,9 @@
             <goals>
               <goal>jar</goal>
             </goals>
+            <configuration>
+              <quiet>true</quiet>
+            </configuration>
             <phase>package</phase>
           </execution>
         </executions>
