@@ -5,6 +5,8 @@ branches:
   - develop
 exclude-labels:
   - 'skip-changelog'
+  - 'ignore-develop-sync'
+  - 'ignore-master-sync'
 categories:
   - title: '🚀 Features'
     labels:
