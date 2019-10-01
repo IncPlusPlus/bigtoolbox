@@ -3,6 +3,8 @@ tag-template: '$NEXT_PATCH_VERSION'
 branches:
   - master
   - develop
+exclude-labels:
+  - 'skip-changelog'
 categories:
   - title: '🚀 Features'
     labels:
