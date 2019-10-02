@@ -12,8 +12,6 @@ matrix:
     install: true
     script:
     - mvn clean install
-    after_success:
-      - bash <(curl -s https://codecov.io/bash)
     deploy:
     - provider: bintray
       file: bintray_info_maven.JSON
