@@ -19,7 +19,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
     <bigtoolbox.io.version>1.0.98</bigtoolbox.io.version>
-    <bigtoolbox.math.version>1.0.98</bigtoolbox.math.version>
+    <bigtoolbox.math.version>1.0.102</bigtoolbox.math.version>
     <bigtoolbox.network.version>1.0.98</bigtoolbox.network.version>
     <bigtoolbox.os.version>1.0.98</bigtoolbox.os.version>
   </properties>
