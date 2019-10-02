@@ -5,30 +5,13 @@ cache:
     - $HOME/.m2/repository
 env:
 - CLI_VERSION=latest
-# Handle git submodules yourself
-git:
-  submodules: false
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
-before_install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
-addons:
-  apt:
-    sources:
-    - sourceline: deb https://download.mono-project.com/repo/ubuntu stable-xenial
-        main
-      key_url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xA6A19B38D3D831EF
-    packages:
-    - mono-devel
-    - msbuild
-    - libmono-system-runtime-interopservices-runtimeinformation4.0-cil
 matrix:
   include:
   - jdk: oraclejdk11
     # See https://github.com/travis-ci/travis-ci/issues/8667
     install: true
     script:
-    - mvn clean jacoco:prepare-agent install jacoco:report
+    - mvn clean install
     after_success:
       - bash <(curl -s https://codecov.io/bash)
     deploy:
@@ -46,10 +29,11 @@ matrix:
       file_glob: true
       file: target/bigtoolbox-*.*.*.jar
       skip_cleanup: true
-      draft: true
+      prerelease: true
       on:
         repo: IncPlusPlus/bigtoolbox
         branch: master
+        tags: true
   - jdk: openjdk11
     # See https://github.com/travis-ci/travis-ci/issues/8667
     install: true
