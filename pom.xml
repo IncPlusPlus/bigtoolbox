@@ -21,7 +21,7 @@
     <bigtoolbox.io.version>1.0.98</bigtoolbox.io.version>
     <bigtoolbox.math.version>1.0.98</bigtoolbox.math.version>
     <bigtoolbox.network.version>1.0.98</bigtoolbox.network.version>
-    <bigtoolbox.os.version>1.0.98</bigtoolbox.os.version>
+    <bigtoolbox.os.version>1.0.99</bigtoolbox.os.version>
   </properties>
   <dependencies>
     <dependency>
