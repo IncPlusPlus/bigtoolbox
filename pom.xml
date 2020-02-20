@@ -20,7 +20,7 @@
     <GH_REGISTRY_TOKEN>${env.GH_REGISTRY_TOKEN}</GH_REGISTRY_TOKEN>
     <bigtoolbox.io.version>1.0.98</bigtoolbox.io.version>
     <bigtoolbox.math.version>1.0.98</bigtoolbox.math.version>
-    <bigtoolbox.network.version>1.0.98</bigtoolbox.network.version>
+    <bigtoolbox.network.version>1.1.0</bigtoolbox.network.version>
     <bigtoolbox.os.version>1.0.98</bigtoolbox.os.version>
   </properties>
   <dependencies>
