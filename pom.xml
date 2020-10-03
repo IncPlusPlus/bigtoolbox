@@ -68,6 +68,7 @@
               <goal>aggregate-jar</goal>
             </goals>
             <configuration>
+              <quiet>true</quiet>
               <includeDependencySources>true</includeDependencySources>
             </configuration>
           </execution>
