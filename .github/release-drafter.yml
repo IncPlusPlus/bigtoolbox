@@ -19,7 +19,9 @@ categories:
       - 'bugfix'
       - 'bug'
   - title: '🐛 Security Vuln. Fixes'
-    label: 'security vulnerability'
+    labels:
+      - 'security vulnerability'
+      - 'security fix'
   - title: '🛠 Improvements'
     label: '🛠 Improvement'
   - title: '📖 Documentation Changes'
