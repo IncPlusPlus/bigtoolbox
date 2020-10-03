@@ -8,12 +8,8 @@ env:
 - CLI_VERSION=latest
 # See https://github.com/travis-ci/travis-ci/issues/8667
 install: true
-before_script:
-  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
 script:
 - mvn clean install
-- fossa init
-- fossa analyze
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:
