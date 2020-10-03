@@ -45,7 +45,7 @@
       <version>${bigtoolbox.os.version}</version>
     </dependency>
   </dependencies>
-  
+
   <build>
     <plugins>
       <plugin>
