@@ -7,7 +7,7 @@
   <name>Big Tool Box</name>
   <description>A collection of tools for varying purposes.
     This is the aggregator POM that includes all of the modules of bigtoolbox</description>
-
+ 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
