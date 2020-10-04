@@ -7,7 +7,7 @@
   <name>Big Tool Box</name>
   <description>A collection of tools for varying purposes.
     This is the aggregator POM that includes all of the modules of bigtoolbox</description>
-
+ 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
@@ -178,7 +178,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M2</version>
+        <version>3.0.0-M3</version>
         <executions>
           <execution>
             <id>enforce-maven</id>
